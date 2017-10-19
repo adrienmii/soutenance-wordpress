@@ -1,0 +1,27 @@
+version: "3.1"
+services:
+
+        wordpress:
+                container_name: esgi-wordpress
+                image: wordpress
+                links:
+                        - mariadb:db
+                ports:
+                        - "8080:80"
+
+        mariadb:
+                container_name: esgi-mariadb
+                image: mariadb
+                environment:
+                        MYSQL_ROOT_PASSWORD: root
+
+        phpmyadmin:
+                container_name: esgi-phpmyadmin
+                image: phpmyadmin/phpmyadmin
+                links:
+                        - mariadb:db
+                ports:
+                        - "8081:80"
+                environment:
+                        MYSQL_USERNAME : root
+                        MY_ROOT_PASSWORD: root
