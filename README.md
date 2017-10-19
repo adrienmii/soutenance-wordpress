@@ -8,7 +8,7 @@ git clone https://github.com/adrienmii/soutenance-wordpress.git
 
 
 ```
-cd wordpress
+cd soutenance-wordpress
 ```
 
 
